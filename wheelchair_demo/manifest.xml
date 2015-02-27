@@ -1,0 +1,17 @@
+<package>
+  <description brief="wheelchair_demo">
+
+     wheelchair_demo
+
+  </description>
+  <author>David V. Lu!!</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/wheelchair_demo</url>
+  <depend package="rospy"/>
+  <depend package="geometry_msgs"/>
+  <depend package="rviz"/>
+
+</package>
+
+

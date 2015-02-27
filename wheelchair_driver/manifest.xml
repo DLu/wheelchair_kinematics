@@ -1,0 +1,16 @@
+<package>
+  <description brief="wheelchair_driver">
+
+     wheelchair_driver
+
+  </description>
+  <author>David V. Lu!!</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/wheelchair_driver</url>
+  <depend package="rospy"/>
+  <depend package="geometry_msgs"/>
+
+</package>
+
+
