@@ -1,6 +1,6 @@
 <launch>
     <node name="rviz" type="rviz" pkg="rviz" args="-d $(find wheelchair_demo)/chair.rviz" respawn="true" />
-    <node name="teleop" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen">
+    <node name="teleop" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen" required="true">
         <remap from="/cmd_vel" to="/wheelchair/cmd_vel"/>
     </node>
     <node name="wheelchair_driver" pkg="wheelchair_driver" type="wheelchair_driver.py" output="screen"/>

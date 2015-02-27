@@ -37,11 +37,7 @@ class Drivable:
         y1 = y0 + (vx * sin(theta0) + vy * sin(pi/2 + theta0)) * time
         theta1 = theta0 + vz * time
 
-        print self.pose
-
         self.pose = (x1,y1,theta1)
-        print self.pose
-        print
 
     def publish(self, pub):
         pub.sendTransform(self.get_translation(),
@@ -57,7 +53,7 @@ class Drivable:
 
 rospy.init_node('driver')
 wheelchair = Drivable('wheelchair', (0.0, 0.0, 0.0))
-offset = rospy.get_offset('offset', 1.0)
+offset = rospy.get_param('offset', 1.0)
 robot = Drivable('pr2', (-offset,0.0,0.0))
 br = tf.TransformBroadcaster()
 
@@ -66,5 +62,7 @@ r = rospy.Rate(R)
 while not rospy.is_shutdown():
     robot.spin_once(1.0/float(R))
     robot.publish(br)
+    wheelchair.spin_once(1.0/float(R))
+    wheelchair.publish(br)
     r.sleep()
 
